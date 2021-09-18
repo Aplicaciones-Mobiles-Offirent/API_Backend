@@ -84,15 +84,6 @@ jobs:
         run: git push heroku master
         
         
-  monitoring:
-    needs: deploy-production
-    runs-on: ubuntu-latest
-    
-    steps:
-    - uses: frankie567/grafana-annotation-action@v1.0.2
-      with:
-        apiHost: https://ernesvz.grafana.net
-        apiToken: ${{ secrets.GRAFANA_API_TOKEN }}
-        text: Deployment of ${{ github.sha }}
+
         
       
